@@ -25,3 +25,8 @@ https://github.com/cstraw2021/kanji-a-day/assets/86491289/48f5a6a8-2b2f-4727-aa7
 | Visual | Description |
 | --- | --- |
 | ![settings](https://github.com/cstraw2021/kanji-a-day/assets/86491289/e7417576-f3c1-44b7-80f4-7740b33234ae) | When clicking the button on the right in the card view, it brings you to the settings, where you can select a specific range of grades that you want to pull kanji from. Whether you're just starting to learn kanji, or you're just trying to knock the last few kanji out before fluency, you're able to adjust the level of kanji drawn for your needs. There's also an option to clear the deck in case you feel like it (mostly to help me debug). |
+
+## Widget! 
+| Visual | Description |
+| --- | --- |
+| ![Widget](https://github.com/cstraw2021/kanji-a-day/assets/86491289/754dd845-8303-4446-af05-16a5ce879c66) | Arguably the most useful part of the app for passive learning. It shows the kanji that's at the top of the deck, which updates at midnight every night. With this, the app doesn't need to be opened for you to slowly learn kanji, both conciously and subconciously, while going through your week. |
