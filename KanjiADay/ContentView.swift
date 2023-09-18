@@ -31,12 +31,15 @@ struct ContentView: View {
 
                     .navigationTitle("NAV")
 
-                case 2:
-                    HomeView2(showSettings: $showSettings, grades: $grades)
+                // Placeholder for other Languages.
+                
+                /*case 2:
+                    Home2(showSettings: $showSettings, grades: $grades)
                 case 3:
-                    HomeView3(showSettings: $showSettings, grades: $grades)
+                    Home3(showSettings: $showSettings, grades: $grades)
                 case 4:
-                    HomeView4(showSettings: $showSettings, grades: $grades)
+                    Home4(showSettings: $showSettings, grades: $grades)*/
+
                 default:
 
                         HomeJP(showSettings: $showSettings, Grades: $grades)
@@ -60,35 +63,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct HomeView2: View {
-    @Binding var showSettings: Bool
-    @Binding var grades: [Int]
-    
-    var body: some View {
-        // Home View 2 implementation
-        Text("Home View 2")
-    }
-}
-
-struct HomeView3: View {
-    @Binding var showSettings: Bool
-    @Binding var grades: [Int]
-    
-    var body: some View {
-        // Home View 3 implementation
-        Text("Home View 3")
-    }
-}
-
-struct HomeView4: View {
-    @Binding var showSettings: Bool
-    @Binding var grades: [Int]
-    
-    var body: some View {
-        // Home View 4 implementation
-        Text("Home View 4")
     }
 }
