@@ -12,7 +12,22 @@ struct Kanji: Identifiable, Codable {
     let grade: Int
     var order: Int
     var offset: CGFloat = 0
+    var words: KanjiWords
+    var sentences: KanjiSentences
+
+    struct KanjiWords: Codable {
+        let this: [String]
+        let reading: [String]
+        let meaning: [String]
+    }
+
+    struct KanjiSentences: Codable {
+        let this: [String]
+        let reading: [String]
+        let meaning: [String]
+    }
 }
+
 
 var KanjiList = loadKanjiListFromDisk()
 
@@ -39,7 +54,9 @@ func newKanji(gradesJP: [Int] = [1, 2, 3, 4, 5, 6, 7]) {
               let grade = kanjiDict["grade"] as? Int,
               let meaning = kanjiDict["meaning"] as? String,
               let onyomi = kanjiDict["on"] as? String,
-              let kunyomi = kanjiDict["kun"] as? String
+              let kunyomi = kanjiDict["kun"] as? String,
+              let wordsDict = kanjiDict["words"] as? [String: [String]],
+              let sentencesDict = kanjiDict["sentences"] as? [String: [String]]
         else {
             continue
         }
@@ -51,11 +68,22 @@ func newKanji(gradesJP: [Int] = [1, 2, 3, 4, 5, 6, 7]) {
             kunyomi: kunyomi,
             grade: grade,
             order: 0,
-            offset: 300
+            offset: 300,
+            words: Kanji.KanjiWords(
+                this: wordsDict["this"] ?? [],
+                reading: wordsDict["reading"] ?? [],
+                meaning: wordsDict["meaning"] ?? []
+            ),
+            sentences: Kanji.KanjiSentences(
+                this: sentencesDict["this"] ?? [],
+                reading: sentencesDict["reading"] ?? [],
+                meaning: sentencesDict["meaning"] ?? []
+            )
         )
         
         kanjiList.append(kanji)
     }
+
     let filteredKanjiList = kanjiList.filter { gradesJP.contains($0.grade) }
     let newKanjiList = filteredKanjiList.map { kanji in
         var newKanji = kanji

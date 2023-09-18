@@ -14,7 +14,38 @@ struct HomeJP : View {
     @Namespace var name
     @Binding var showSettings: Bool
     @Binding var Grades: [Int]
-    @State var selected : Kanji = Kanji(character: "日", meaning: "sun", onyomi: "ニチ, ジツ", kunyomi: "ひ, -び, -か", grade: 1, order: 0, offset: 0)
+    @State var selected: Kanji = Kanji(
+        character: "default",
+        meaning: "default",
+        onyomi: "default",
+        kunyomi: "default",
+        grade: 1,
+        order: 0,
+        offset: 0,
+        words: Kanji.KanjiWords(
+            this: ["default", "default", "default"],
+            reading: ["default", "default", "default"],
+            meaning: ["default", "default", "default"]
+        ),
+        sentences: Kanji.KanjiSentences(
+            this: [
+                "default1",
+                "default2",
+                "default3"
+            ],
+            reading: [
+                "default1",
+                "default2",
+                "default3"
+            ],
+            meaning: [
+                "default1",
+                "default2",
+                "default3"
+            ]
+        )
+    )
+
     @State var show = false
     var body: some View{
         ZStack{
@@ -89,6 +120,7 @@ struct HomeJP : View {
                         for i in 0..<KanjiList.count{
                             print(KanjiList[i].character,KanjiList[i].order)
                         }*/
+                        renList[0].offset=300
                         withAnimation{
                             renList[0].offset=0
                         }
