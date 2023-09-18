@@ -2,9 +2,7 @@
 One of the more difficult parts of language learning, and memorization in general, is consistency. Oftentimes, slacking on memorization for a week can make you easily lose track of material incredibly quickly. Especially with languages like Japanese and Chinese, the sheer amount of characters needed to be memorized from the get-go can be daunting. With Kanji a Day, looking at just one Kanji (or more!) a day can help with "passive learning" and reinforce the pacing needed to retain information.
 
 # Features
-| blah | blah |
-| --- | --- |
-| dawd | https://github.com/cstraw2021/kanji-a-day/assets/86491289/c157384b-0b6e-4963-b518-af3aeb516d54 |
+
 ## Swiping
 One of my goals is to make this app gesture based and have as little confusion with navigation as possible. In the main screen, there's a deck of cards with the kanji from the past 14 days. You can swipe a card to the side, and it goes to the back of the deck. This will also affect the home screen widget, as the widget always displays the topmost card of the deck. 
 
